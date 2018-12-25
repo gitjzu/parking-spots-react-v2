@@ -1,8 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Button } from "react-native";
-import { MapView } from "expo";
+import { MapView, AdMobInterstitial } from "expo";
 import getDirections from "react-native-google-maps-directions";
 import I18n from "../i18n/i18n";
+import { interstitialAdUnitId } from "../configs/config";
 import { regionFrom } from "../util";
 import SlidelInView from "./SlidelInView";
 import TabBarIcon from "./TabBarIcon";
@@ -19,6 +20,11 @@ export default class SpotMap extends React.PureComponent {
     this.mapRef = null;
   }
 
+  /**
+   * On Android devices pressing a marker automatically adjusts the map
+   * position to that marker coordinates. There is no similar functionality
+   * for Android polylines or iOS markers & polylines
+   */
   _onPress = spot => {
     this.setState({
       selectedSpot: spot
@@ -52,6 +58,12 @@ export default class SpotMap extends React.PureComponent {
       selectedSpot: null
     });
   };
+
+  async componentDidMount() {
+    // AdMobInterstitial.setAdUnitID(interstitialAdUnitId);
+    // await AdMobInterstitial.requestAdAsync();
+    // await AdMobInterstitial.showAdAsync();
+  }
 
   render() {
     const { selectedSpot } = this.state;

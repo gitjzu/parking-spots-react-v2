@@ -1,7 +1,9 @@
 import React from "react";
 import { Platform, StyleSheet, View } from "react-native";
+import { AdMobBanner } from "expo";
 import { graphql, withApollo } from "react-apollo";
 import SpotList from "../components/SpotList";
+import { bannerAdUnitId } from "../configs/config.js";
 import { orderByDistance } from "../util";
 
 const QUERY_LIMIT = 10;
@@ -63,30 +65,15 @@ class HomeScreen extends React.Component {
   };
 
   render() {
-    const { location, errorMessage } = this.state;
-    // if (
-    //   errorMessage &&
-    //   errorMessage === "Permission to access location was denied"
-    // ) {
-    //   return (
-    //     <View style={styles.locationPermissionContainer}>
-    //       <Text style={[styles.locationPermissionTxt, styles.emoji]}>🗺️📍</Text>
-    //       <Text style={styles.locationPermissionTxt}>
-    //         {I18n.t("noLocation")}
-    //       </Text>
-    //     </View>
-    //   );
-    // } else
     return (
       <View style={styles.container}>
-        {/* <SpotListWithData
-          userLat={location ? location.coords.latitude : null}
-          userLon={location ? location.coords.longitude : null}
-          queryOffset={this.state.queryOffset}
-          filter={this.state.filter}
-          setFilter={this._setFilter}
-        /> */}
-
+        <View style={styles.adContainer}>
+          <AdMobBanner
+            bannerSize="banner"
+            adUnitID={bannerAdUnitId}
+            onDidFailToReceiveAdWithError={this.bannerError}
+          />
+        </View>
         {this.props.screenProps.data && (
           <SpotList
             filter={this.state.filter}
@@ -109,55 +96,8 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 40
   },
-  locationPermissionContainer: {
-    flex: 1,
-    justifyContent: "center",
+  adContainer: {
     alignItems: "center",
-    margin: 20
-  },
-  locationPermissionTxt: {
-    fontSize: 20,
-    textAlign: "center"
-  },
-  emoji: {
-    fontSize: 35
+    marginBottom: 5
   }
 });
-
-// const SpotListWithData = graphql(allSpotsQuery, {
-//   options: ({ userLat, userLon, queryOffset, filter }) => ({
-//     variables: {
-//       userLat,
-//       userLon,
-//       type: filter,
-//       offset: queryOffset,
-//       limit: QUERY_LIMIT
-//     },
-//     fetchPolicy: "network-only",
-//     notifyOnNetworkStatusChange: true
-//   }),
-//   props({ data: { Spots, fetchMore, loading, networkStatus, refetch } }) {
-//     return {
-//       Spots,
-//       loading,
-//       networkStatus,
-//       refetch,
-//       loadMoreEntries: () => {
-//         return fetchMore({
-//           variables: {
-//             offset: Spots.length
-//           },
-//           updateQuery: (previousResult, { fetchMoreResult }) => {
-//             if (!fetchMoreResult) {
-//               return previousResult;
-//             }
-//             return Object.assign({}, previousResult, {
-//               // Append the new feed results to the old one
-//               Spots: [...previousResult.Spots, ...fetchMoreResult.Spots]
-//             });
-//           }
-//         });
-//       }
-//     };
-//   }
-// })(SpotList);
