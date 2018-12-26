@@ -1,16 +1,10 @@
-import React, { Component } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  ActivityIndicator,
-  FlatList
-} from "react-native";
+import React from "react";
+import { View, StyleSheet, ActivityIndicator, FlatList } from "react-native";
 
 import Spot from "./Spot";
 import Filters from "./Filters";
 
-export default class SpotList extends Component {
+export default class SpotList extends React.PureComponent {
   render() {
     return (
       <View style={styles.container}>
@@ -20,10 +14,10 @@ export default class SpotList extends Component {
           <FlatList
             style={styles.container}
             data={this.props.Spots}
-            keyExtractor={item => item.id}
-            initialNumToRender={10}
-            refreshing={this.props.networkStatus === 4}
-            onRefresh={this.props.refetch}
+            keyExtractor={(item, index) => `${item.id}-${index}`}
+            windowSize={10}
+            //onRefresh={this.props.loadData}
+            //refreshing={this.props.refreshing}
             renderItem={this.renderSpot}
             ListFooterComponent={this.renderFooter}
             ListHeaderComponent={
@@ -48,23 +42,15 @@ export default class SpotList extends Component {
       distance={item.distance}
     />
   );
-  renderFooter = () => {
-    return (
-      <View style={styles.loadingContainer}>
-        {//networkstatus 3 = fetchMore is in flight
-        this.props.loading && this.props.networkStatus === 3 && (
-          <ActivityIndicator size="large" />
-        )}
-      </View>
-    );
-  };
 
-  loadMore = () => {
-    if (!this.onEndReachedCalledDuringMomentum) {
-      this.props.loadMoreEntries();
-      this.onEndReachedCalledDuringMomentum = true;
-    }
-  };
+  renderFooter = () => (
+    <View style={styles.loadingContainer}>
+      {//networkstatus 3 = fetchMore is in flight
+      this.props.loading && this.props.networkStatus === 3 && (
+        <ActivityIndicator size="large" />
+      )}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
