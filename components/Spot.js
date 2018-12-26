@@ -42,13 +42,13 @@ export default class Spot extends PureComponent {
               {coordinates.length === 1 ? (
                 <MapView.Marker
                   coordinate={coordinates[0]}
-                  pinColor="#304ffe"
+                  pinColor={type === "24H" ? "#304ffe" : "#222"}
                 />
               ) : (
                 <MapView.Polyline
                   coordinates={coordinates}
                   strokeWidth={5}
-                  strokeColor="#304ffe"
+                  strokeColor={type === "24H" ? "#304ffe" : "#222"}
                 />
               )}
             </MapView>
@@ -64,6 +64,8 @@ export default class Spot extends PureComponent {
             <Text style={{ marginRight: 5 }}>
               {distance ? <Text>{distance} km</Text> : <Text>-- km</Text>}
             </Text>
+          </View>
+          <View>
             <Button title={I18n.t("navigateHere")} onPress={this.navigate} />
           </View>
         </View>
@@ -85,7 +87,10 @@ export default class Spot extends PureComponent {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 5,
+    marginTop: 5,
     backgroundColor: "#FFF"
   },
   cardBottom: {
@@ -108,7 +113,6 @@ const styles = StyleSheet.create({
   distanceContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-end",
-    flex: 1
+    justifyContent: "flex-end"
   }
 });
