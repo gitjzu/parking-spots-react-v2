@@ -1,11 +1,9 @@
 export default {
   title: "Parking Spots",
   faqShort: "FAQ",
-  faqLong: "Frequently Asked Questions",
-  drawerInfo: "Free long and short-term parking spots in Helsinki",
   version: "Version",
   shareMessage:
-    "Find free long and short-term Parking Spots in Helsinki, Download the app from the Play store! ",
+    "Find free long and short-term Parking Spots in Helsinki, Download the app for Android & iOS from the app store! ",
   shareTitle: "Find free long and short-term Parking Spots in Helsinki",
   shareDialogTitle: "Share the app with your friends!",
   places: "Places",
@@ -27,6 +25,8 @@ export default {
   a2: "The data comes from here",
   q3: "When was the data last updated",
   a3: "The data was last updated 21.07.2017",
+  q4: "Who made this app?",
+  a4: "I made this! Check out my social media below :)",
   showOnly: "Show only",
   drawerList: "Spots",
   blue: "Blue",

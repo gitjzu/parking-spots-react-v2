@@ -1,11 +1,9 @@
 export default {
   title: "Ilmaisparkki",
   faqShort: "UKK",
-  faqLong: "Usein kysytyt kysymykset",
-  drawerInfo: "Helsingin ilmaiset parkkipaikat",
   version: "Versio",
   shareMessage:
-    "Löydä ilmaisia pitkä- ja lyhytaikaisia parkkipaikkoja Helsingistä, lataa Ilmaisparkki-sovellus Play-kaupasta! ",
+    "Löydä ilmaisia pitkä- ja lyhytaikaisia parkkipaikkoja Helsingistä, lataa Ilmaisparkki-sovellus Android & iOS-laitteille sovelluskaupasta! ",
   shareTitle:
     "Löydä ilmaisia pitkä- ja lyhytaikaisia parkkipaikkoja Helsingistä!",
   shareDialogTitle: "Jaa sovellus kavereillesi!",
@@ -29,6 +27,8 @@ export default {
   a2: "Tiedot parkkipaikoista tulevat täältä",
   q3: "Milloin parkkipaikkojen tiedot ovat viimeksi päivitetty?",
   a3: "Tiedot ovat päivitetty 21.07.2017",
+  q4: "Kuka on toteuttanut Ilmaisparkin?",
+  a4: "Minä! Tsekkaa SoMet alta :)",
   showOnly: "Näytä vain",
   drawerList: "Parkkipaikat",
   blue: "Sininen",

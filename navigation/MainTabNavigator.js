@@ -62,7 +62,7 @@ export default createBottomTabNavigator(
         title: "FAQ",
         tabBarVisible: true,
         tabBarIcon: ({ tintColor }) => (
-          <TabBarIcon name="md-search" size={25} color={tintColor} />
+          <TabBarIcon name="md-help" size={25} color={tintColor} />
         )
       }
     }
