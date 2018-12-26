@@ -6,14 +6,11 @@ import SpotList from "../components/SpotList";
 import { bannerAdUnitId } from "../configs/config.js";
 import { orderByDistance } from "../util";
 
-const QUERY_LIMIT = 10;
-
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      queryOffset: 0,
       filter: null,
       data: props.screenProps.data,
       loading: false
@@ -80,6 +77,8 @@ class HomeScreen extends React.Component {
             setFilter={this._setFilter}
             Spots={this.state.data}
             loading={this.state.loading}
+            loadData={this.props.screenProps.loadData}
+            refreshing={this.props.screenProps.refreshing}
             networkStatus={this.networkStatus}
           />
         )}

@@ -34,7 +34,8 @@ export default class App extends React.Component {
       isLoadingComplete: false,
       data: null,
       location: null,
-      errorMessage: null
+      errorMessage: null,
+      refreshing: false
     };
 
     // Initialize new cache, we'll restore any persisted cache later on to this one
@@ -99,7 +100,9 @@ export default class App extends React.Component {
             <AppNavigator
               screenProps={{
                 data: this.state.data,
-                location: this.state.location
+                location: this.state.location,
+                loadData: this.loadData,
+                refreshing: this.state.refreshing
               }}
             />
           </View>
@@ -108,7 +111,10 @@ export default class App extends React.Component {
     }
   }
 
-  _loadData = async () => {
+  loadData = async () => {
+    this.setState({
+      refreshing: true
+    });
     /**
      * this.client.query tries to first fetch data from cache
      * but if no data is in cache, it fetches from server
@@ -118,7 +124,8 @@ export default class App extends React.Component {
     });
 
     this.setState({
-      data: data.data.Spots
+      data: data.data.Spots,
+      refreshing: false
     });
 
     return Promise.resolve();
@@ -138,7 +145,7 @@ export default class App extends React.Component {
         // to remove this if you are not using it in your app
         "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf")
       }),
-      this._loadData()
+      this.loadData()
     ]);
   };
 
