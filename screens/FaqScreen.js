@@ -90,9 +90,9 @@ const QAs = () => {
         <Text style={{ fontWeight: "bold" }}>{I18n.t("answer")}:</Text>
         <Text
           style={styles.answer}
-          onPress={() => Linking.openURL("http://tinyurl.com/y73zcj8s")}
+          onPress={() => Linking.openURL("https://tinyurl.com/y8wvjwz7")}
         >
-          {I18n.t("a2")}: http://tinyurl.com/y73zcj8s
+          {I18n.t("a2")}: https://tinyurl.com/y8wvjwz7
         </Text>
       </View>
 

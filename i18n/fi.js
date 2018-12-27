@@ -26,7 +26,7 @@ export default {
   q2: "Mistä Ilmaisparkki-sovellus saa tiedot parkkipaikoista?",
   a2: "Tiedot parkkipaikoista tulevat täältä",
   q3: "Milloin parkkipaikkojen tiedot ovat viimeksi päivitetty?",
-  a3: "Tiedot ovat päivitetty 21.07.2017",
+  a3: "Tiedot ovat päivitetty 04.12.2018",
   q4: "Kuka on toteuttanut Ilmaisparkin?",
   a4: "Minä! Tsekkaa SoMet alta :)",
   showOnly: "Näytä vain",

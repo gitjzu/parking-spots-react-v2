@@ -24,7 +24,7 @@ export default {
   q2: "Where does the app get its data?",
   a2: "The data comes from here",
   q3: "When was the data last updated",
-  a3: "The data was last updated 21.07.2017",
+  a3: "The data was last updated 04.12.2018",
   q4: "Who made this app?",
   a4: "I made this! Check out my social media below :)",
   showOnly: "Show only",
