@@ -13,8 +13,7 @@ import {
   Icon,
   Location,
   Constants,
-  Permissions,
-  MapView
+  Permissions
 } from "expo";
 import { ApolloProvider } from "react-apollo";
 import { ApolloClient } from "apollo-client";

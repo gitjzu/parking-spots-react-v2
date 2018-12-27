@@ -116,10 +116,3 @@ const styles = StyleSheet.create({
     width: 80
   }
 });
-
-const uiTheme = {
-  palette: {
-    primaryColor: "#304ffe",
-    accentColor: "#FF4081"
-  }
-};

@@ -1,7 +1,6 @@
 import React from "react";
-import { Platform, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { AdMobBanner } from "expo";
-import { graphql, withApollo } from "react-apollo";
 import SpotList from "../components/SpotList";
 import { bannerAdUnitId } from "../configs/config.js";
 import { orderByDistance } from "../util";
@@ -87,7 +86,7 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default withApollo(HomeScreen);
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {

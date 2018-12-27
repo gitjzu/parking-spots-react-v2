@@ -43,6 +43,7 @@ export default class SpotList extends React.PureComponent {
     />
   );
 
+  // Not used anymore...
   renderFooter = () => (
     <View style={styles.loadingContainer}>
       {//networkstatus 3 = fetchMore is in flight

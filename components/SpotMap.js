@@ -78,7 +78,6 @@ export default class SpotMap extends React.PureComponent {
           showsUserLocation
           provider="google"
           toolbarEnabled={false}
-          //kmlSrc="https://s3.eu-north-1.amazonaws.com/ilmaisparkki/parking_spots_2017.kml"
         >
           {this.props.screenProps.data.map(spot => (
             <React.Fragment key={`${spot.lat}${spot.lon}`}>

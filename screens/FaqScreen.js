@@ -19,11 +19,11 @@ import {
 } from "../configs/config";
 
 export default class FaqScreen extends Component {
-  handleMail = () => {
+  _handleMail = () => {
     return Linking.openURL(`mailto:${devEmail}`);
   };
 
-  handleShare = () => {
+  _handleShare = () => {
     return Share.share(
       {
         message:
@@ -46,58 +46,21 @@ export default class FaqScreen extends Component {
             borderLeftWidth: Dimensions.get("window").width
           }}
         >
-          <TouchableOpacity
-            style={{
-              backgroundColor: "#FF8900",
-              borderRadius: 45,
-              height: 75,
-              width: 75,
-              position: "absolute",
-              bottom: -45,
-              right: 10,
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-            onPress={this.handleMail}
-          >
+          <TouchableOpacity style={styles.mailBtn} onPress={this._handleMail}>
             <TabBarIcon name="md-mail" size={40} color="#FFF" />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              backgroundColor: "#FF8900",
-              borderRadius: 45,
-              height: 75,
-              width: 75,
-              position: "absolute",
-              bottom: -60,
-              right: 100,
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-            onPress={this.handleShare}
-          >
+
+          <TouchableOpacity style={styles.shareBtn} onPress={this._handleShare}>
             <TabBarIcon name="md-share" size={40} color="#FFF" />
           </TouchableOpacity>
+
           <Image
             source={require("../assets/images/icon-512.png")}
-            style={{
-              height: 130,
-              width: 130,
-              position: "absolute",
-              bottom: 0,
-              left: -Dimensions.get("window").width - 20
-            }}
+            style={styles.logo}
           />
-          <View
-            style={{
-              height: 50,
-              width: Dimensions.get("window").width,
-              position: "absolute",
-              left: -Dimensions.get("window").width + 10,
-              bottom: -80
-            }}
-          >
-            <Text style={{ fontSize: 40 }}>{I18n.t("faqShort")}:</Text>
+
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{I18n.t("faqShort")}:</Text>
           </View>
         </View>
 
@@ -177,5 +140,42 @@ const styles = StyleSheet.create({
     borderBottomWidth: 80,
     borderLeftColor: "transparent",
     borderBottomColor: "white"
-  }
+  },
+  mailBtn: {
+    backgroundColor: "#FF8900",
+    borderRadius: 45,
+    height: 75,
+    width: 75,
+    position: "absolute",
+    bottom: -45,
+    right: 10,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  shareBtn: {
+    backgroundColor: "#FF8900",
+    borderRadius: 45,
+    height: 75,
+    width: 75,
+    position: "absolute",
+    bottom: -60,
+    right: 100,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  logo: {
+    height: 130,
+    width: 130,
+    position: "absolute",
+    bottom: 0,
+    left: -Dimensions.get("window").width - 20
+  },
+  titleContainer: {
+    height: 50,
+    width: Dimensions.get("window").width,
+    position: "absolute",
+    left: -Dimensions.get("window").width + 10,
+    bottom: -80
+  },
+  title: { fontSize: 40 }
 });
