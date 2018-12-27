@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Parking Spots",
+    "description": "Find parking spots in downtown Helsinki, Finland",
+    "slug": "parkingspots",
+    "privacy": "unlisted",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon-512.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0092db"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "buildNumber": "1",
+      "bundleIdentifier": "com.parkingspots",
+      "config": {
+        "googleMapsApiKey": "PUT_YOUR_API_KEY_HERE"
+      }
+    },
+    "android": {
+      "package": "com.parkingspots",
+      "config": {
+        "googleMaps": {
+          "apiKey": "PUT_YOUR_API_KEY_HERE"
+        }
+      },
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    }
+  }
+}
