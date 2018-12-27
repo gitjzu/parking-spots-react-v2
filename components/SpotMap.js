@@ -127,7 +127,9 @@ export default class SpotMap extends React.PureComponent {
                   textAlign: "center"
                 }}
               >
-                {selectedSpot.spot_name} ({selectedSpot.type})
+                {selectedSpot.spot_name} ({selectedSpot.type}
+                {/**If a spot has only one coordinate pair, it means it's a parking area*/}
+                {selectedSpot.coordinates.length === 1 ? " Parkkialue" : ""})
               </Text>
               {selectedSpot.distance && (
                 <Text style={{ paddingTop: 5, paddingBottom: 5 }}>
