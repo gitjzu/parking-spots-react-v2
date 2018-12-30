@@ -20,7 +20,7 @@ export default {
   navigateHere: "Navigoi tänne",
   search: "Etsi nimellä",
   q1:
-    "Miksi Ilmaisparkki-sovelluksessa näkyy eri kilometri etäisyys, kuin Googlen karttasovelluksessa?",
+    "Miksi Ilmaisparkki-sovelluksessa näkyy eri kilometri etäisyys, kuin Googlen ja Applen karttasovelluksissa?",
   a1:
     "Ilmaisparkki-sovelluksen laskema etäisyys on vain suuntaa antava, koska se lasketaan ns. linnuntietä",
   q2: "Mistä Ilmaisparkki-sovellus saa tiedot parkkipaikoista?",

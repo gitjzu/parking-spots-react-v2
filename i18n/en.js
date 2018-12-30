@@ -18,7 +18,8 @@ export default {
   locatingSuccessfull: "Location request was succesfull",
   navigateHere: "Navigate here",
   search: "Search by name",
-  q1: "Why does this app display different distance compared to Google Maps?",
+  q1:
+    "Why does this app display different distance compared to Google and Apple Maps?",
   a1:
     "The distance calculated by Parking Spots is only an estimate because it is calculated as the crow flies",
   q2: "Where does the app get its data?",

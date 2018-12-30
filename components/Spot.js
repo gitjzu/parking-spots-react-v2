@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { MapView } from "expo";
-import getDirections from "react-native-google-maps-directions";
+import { OpenMapDirections } from "react-native-navigation-directions";
 
 import { regionFrom } from "../util";
 import I18n from "../i18n/i18n";
@@ -74,14 +74,11 @@ export default class Spot extends PureComponent {
   }
 
   navigate = () => {
-    const data = {
-      destination: {
-        latitude: this.props.lat,
-        longitude: this.props.lon
-      },
-      params: []
+    const destination = {
+      latitude: this.props.lat,
+      longitude: this.props.lon
     };
-    getDirections(data);
+    OpenMapDirections(null, destination, "d");
   };
 }
 

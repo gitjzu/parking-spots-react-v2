@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Button } from "react-native";
 import { MapView, AdMobInterstitial } from "expo";
-import getDirections from "react-native-google-maps-directions";
+import { OpenMapDirections } from "react-native-navigation-directions";
 import I18n from "../i18n/i18n";
 import { interstitialAdUnitId } from "../configs/config";
 import { regionFrom } from "../util";
@@ -43,14 +43,11 @@ export default class SpotMap extends React.PureComponent {
 
   _navigate = () => {
     const { selectedSpot } = this.state;
-    const data = {
-      destination: {
-        latitude: selectedSpot.lat,
-        longitude: selectedSpot.lon
-      },
-      params: []
+    const destination = {
+      latitude: selectedSpot.lat,
+      longitude: selectedSpot.lon
     };
-    getDirections(data);
+    OpenMapDirections(null, destination, "d");
   };
 
   _clearSelection = () => {
@@ -76,7 +73,6 @@ export default class SpotMap extends React.PureComponent {
           style={styles.container}
           initialRegion={this.state.region}
           showsUserLocation
-          provider="google"
           toolbarEnabled={false}
         >
           {this.props.screenProps.data.map(spot => (

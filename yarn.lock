@@ -1422,6 +1422,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+between-range@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/between-range/-/between-range-1.0.0.tgz#aab7c2f46ef87a3b4ba9a7611724d9b813e7e149"
+
 big-integer@^1.6.7:
   version "1.6.40"
   resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.40.tgz#02e4cd4d6e266c4d9ece2469c05cb6439149fc78"
@@ -3168,6 +3172,12 @@ is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
+is-valid-coordinates@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-valid-coordinates/-/is-valid-coordinates-1.0.0.tgz#ac26e968be78f73903e26fbe990808e8a5015310"
+  dependencies:
+    between-range "^1.0.0"
+
 is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
@@ -4891,13 +4901,15 @@ react-native-gesture-handler@1.0.9:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
-react-native-google-maps-directions@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-google-maps-directions/-/react-native-google-maps-directions-2.0.0.tgz#80912774722e558880fc33fe19a419bb974754c1"
-
 react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
+
+react-native-navigation-directions@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-navigation-directions/-/react-native-navigation-directions-1.0.3.tgz#9bdeb071b8e8e051fbc9dcb3cea547cc261aad31"
+  dependencies:
+    is-valid-coordinates "1.0.0"
 
 react-native-platform-touchable@^1.1.1:
   version "1.1.1"
