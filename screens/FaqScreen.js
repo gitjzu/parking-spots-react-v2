@@ -54,14 +54,14 @@ export default class FaqScreen extends Component {
             <TabBarIcon name="md-share" size={40} color="#FFF" />
           </TouchableOpacity>
 
-          <Image
+          {/* <Image
             source={require("../assets/images/icon-512.png")}
             style={styles.logo}
           />
 
           <View style={styles.titleContainer}>
             <Text style={styles.title}>{I18n.t("faqShort")}:</Text>
-          </View>
+          </View> */}
         </View>
 
         <ScrollView style={{ marginBottom: 50 }}>
