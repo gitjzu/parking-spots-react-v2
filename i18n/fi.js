@@ -29,6 +29,8 @@ export default {
   a3: "Tiedot ovat päivitetty 04.12.2018",
   q4: "Kuka on toteuttanut Ilmaisparkin?",
   a4: "Minä! Tsekkaa SoMet alta :)",
+  q5: "Mistä löydän tietosuojaselosteen?",
+  a5: "Täältä!",
   showOnly: "Näytä vain",
   drawerList: "Parkkipaikat",
   blue: "Sininen",

@@ -15,7 +15,8 @@ import TabBarIcon from "../components/TabBarIcon";
 import {
   linkToPlayStore,
   linkToItunesStore,
-  devEmail
+  devEmail,
+  privacyPolicy
 } from "../configs/config";
 
 export default class FaqScreen extends Component {
@@ -111,6 +112,19 @@ const QAs = () => {
         <Text style={{ fontWeight: "bold" }}>{I18n.t("answer")}:</Text>
         <Text style={styles.answer}>{I18n.t("a4")}</Text>
       </View> */}
+
+      <View style={styles.card}>
+        <Text style={{ fontWeight: "bold" }}>{I18n.t("question")}:</Text>
+        <Text style={styles.question}>{I18n.t("q5")}</Text>
+
+        <Text style={{ fontWeight: "bold" }}>{I18n.t("answer")}:</Text>
+        <Text
+          style={styles.answer}
+          onPress={() => Linking.openURL(privacyPolicy)}
+        >
+          {I18n.t("a5")}
+        </Text>
+      </View>
     </React.Fragment>
   );
 };

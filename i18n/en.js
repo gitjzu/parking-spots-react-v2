@@ -28,6 +28,8 @@ export default {
   a3: "The data was last updated 04.12.2018",
   q4: "Who made this app?",
   a4: "I made this! Check out my social media below :)",
+  q5: "Where can I find the privacy policy",
+  a5: "Click here!",
   showOnly: "Show only",
   drawerList: "Spots",
   blue: "Blue",
